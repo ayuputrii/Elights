@@ -10,7 +10,7 @@ const Home = ({navigation}) => {
       <HeaderList
         image={FoodDummy1}
         titleHeader="Home List"
-        subTitleHeader="Buy someone in here"
+        subTitleHeader="Buy something in here"
       />
       <ScrollView>
         <TouchableOpacity>
