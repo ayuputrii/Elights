@@ -1,9 +1,14 @@
+/* eslint-disable prettier/prettier */
+import {Dimensions} from 'react-native';
+
+const {height: HEIGHT} = Dimensions.get('window');
+
 export default {
   page: {
     flex: 1,
   },
   backgroundCover: {
-    height: 320,
+    height: HEIGHT / 2,
     paddingTop: 26,
     paddingLeft: 22,
   },

@@ -45,7 +45,7 @@ const ListProduct = () => {
       </View>
     );
   }
-  console.log(data);
+
   return (
     <View style={style.container}>
       {data.data.map((item, index) => (

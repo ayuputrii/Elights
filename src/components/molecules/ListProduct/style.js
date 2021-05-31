@@ -3,6 +3,7 @@ import {Dimensions} from 'react-native';
 
 const {width: WIDTH, height: HEIGHT} = Dimensions.get('window');
 const containerPadding = 10;
+
 export default {
   container: {
     flex: 1,
@@ -36,12 +37,12 @@ export default {
     left: 0,
   },
   addToCartText: {
-    fontSize: 16 ,
+    fontSize: 16,
     fontFamily: 'ComicNeue-Bold',
     color: '#FFF',
   },
   productCard: {
-    width: (WIDTH / 2) - (containerPadding + 5),
+    width: WIDTH / 2 - (containerPadding + 5),
     height: HEIGHT / 2.5,
     borderRadius: 10,
     marginBottom: 10,
@@ -55,11 +56,11 @@ export default {
     borderTopLeftRadius: 10,
     resizeMode: 'contain',
   },
-  contentText:{
+  contentText: {
     margin: 12,
   },
   title: {
-    fontSize: 16 ,
+    fontSize: 16,
     fontFamily: 'ComicNeue-Bold',
     color: '#020202',
   },
