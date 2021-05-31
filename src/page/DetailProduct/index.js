@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ImageBackground,
   ScrollView,
@@ -13,6 +13,15 @@ import {Button, Counter, Rating} from '../../components';
 const DetailProduct = ({navigation, route}) => {
   const canGoback = navigation.canGoBack();
   const {title, image, description, category, price} = route.params;
+  const [count, setCount] = useState(1);
+  const increment = () => {
+    setCount(count + 1);
+  };
+  const decrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
 
   return (
     <View style={style.page}>
@@ -30,18 +39,22 @@ const DetailProduct = ({navigation, route}) => {
               <Text style={style.title}>{title}</Text>
               <Rating />
             </View>
-            <Counter />
+            <Counter
+              count={count}
+              increment={increment}
+              decrement={decrement}
+            />
           </View>
           <ScrollView>
             <Text style={style.desc}>{description}</Text>
             <Text style={style.label}>Category</Text>
-            <Text style={style.desc}> => {category}</Text>
+            <Text style={style.desc}> =&gt; {category}</Text>
           </ScrollView>
         </View>
         <View style={style.footer}>
           <View style={style.priceContainer}>
             <Text style={style.labelTotal}>Total Prices</Text>
-            <Text style={style.priceTotal}>{price}</Text>
+            <Text style={style.priceTotal}>${price * count}</Text>
           </View>
           <View style={style.button}>
             <Button

@@ -3,6 +3,7 @@ export default {
     fontSize: 14,
     fontFamily: 'Poppins-Regular',
     color: '#020202',
+    marginTop: 10,
   },
   input: {
     borderWidth: 1,

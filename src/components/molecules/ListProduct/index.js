@@ -20,34 +20,23 @@ const ListProduct = () => {
   const navigation = useNavigation();
   const {isLoading, error, data} = useQuery('getData', () => axios(API_URL));
   const cart = useStore(state => state.cart);
-
-  const usePrevious = value => {
-    const ref = useRef();
-    useEffect(() => {
-      ref.current = value;
-    });
-    return ref.current;
-  };
-
-  const prevCart = usePrevious(cart);
-
+  const initialization = useRef(true);
   useEffect(() => {
-    if (prevCart?.length > 0) {
-      if (prevCart.length < cart.length) {
+    if (initialization.current) {
+      initialization.current = false;
+    } else {
+      if (navigation.isFocused()) {
         showAlert();
       }
     }
-  }, [cart, prevCart]);
+    /* eslint-disable react-hooks/exhaustive-deps */
+  }, [cart]);
 
   const showAlert = () => {
     Alert.alert('Add Item Success', 'Item successfully added to cart!');
   };
 
-  const addItem = useStore(state => {
-    showAlert();
-    return state.addItem;
-  });
-
+  const addItem = useStore(state => state.addItem);
   const RenderItem = ({item}) => (
     <TouchableOpacity
       onPress={() => navigation.navigate('DetailProduct', item)}>
@@ -68,6 +57,15 @@ const ListProduct = () => {
       </View>
     </TouchableOpacity>
   );
+
+  if (error) {
+    return (
+      <View style={style.loadingContainer}>
+        <Text>Oops sorry, an error occured during process!</Text>
+      </View>
+    );
+  }
+
   if (isLoading) {
     return (
       <View style={style.loadingContainer}>

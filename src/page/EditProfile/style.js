@@ -52,4 +52,23 @@ export default {
     flex: 1,
     textAlign: 'center',
   },
+  addressWrapper: {
+    backgroundColor: '#DEDEDE',
+    marginBottom: 10,
+    padding: 20,
+    borderRadius: 3,
+  },
+  removeAddress: {
+    fontFamily: 'Poppins-Regular',
+    textAlign: 'right',
+    marginTop: 20,
+    color: '#FF8080',
+  },
+  errorText: {
+    fontFamily: 'Poppins-Regular',
+    color: '#FF8080',
+    fontSize: 12,
+    marginLeft: 5,
+    marginTop: 5,
+  },
 };

@@ -8,11 +8,12 @@ import {
   IcProfileOff,
   IcProfileOn,
 } from '../../../assets';
+import useStore from '../../../store';
 import style from './style';
 
 const BottomNavigation = ({state, descriptors, navigation}) => {
   const focusedOptions = descriptors[state.routes[state.index].key].options;
-
+  const cart = useStore(s => s.cart);
   if (focusedOptions.tabBarVisible === false) {
     return null;
   }
@@ -72,7 +73,18 @@ const BottomNavigation = ({state, descriptors, navigation}) => {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}>
-            <Icon label={label} focus={isFocused} />
+            {route.name === 'Order' ? (
+              <View style={style.badgeCart}>
+                {cart.length > 0 && (
+                  <View style={style.badgeNumber}>
+                    <Text style={style.badgeText}>{cart.length}</Text>
+                  </View>
+                )}
+                <Icon label={label} focus={isFocused} />
+              </View>
+            ) : (
+              <Icon label={label} focus={isFocused} />
+            )}
             <Text
               style={{
                 color: isFocused ? '#009688' : '#E2E2E2',

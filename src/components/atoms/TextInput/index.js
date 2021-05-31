@@ -8,6 +8,9 @@ const TextInput = ({
   multiline,
   numberOfLines,
   maxLength,
+  onChangeText,
+  defaultValue,
+  keyboardType,
 }) => {
   return (
     <View>
@@ -21,6 +24,9 @@ const TextInput = ({
         multiline={multiline}
         numberOfLines={numberOfLines}
         maxLength={maxLength}
+        onChangeText={onChangeText}
+        defaultValue={defaultValue}
+        keyboardType={keyboardType || 'default'}
       />
     </View>
   );

@@ -44,4 +44,15 @@ export default {
     backgroundColor: '#FFC93C',
     borderRadius: 4,
   },
+  cartCheckoutDisable: {
+    borderWidth: 0.7,
+    paddingHorizontal: 18,
+    paddingVertical: 9,
+    borderColor: '#DEDEDE',
+    backgroundColor: '#DEDEDE',
+    borderRadius: 4,
+  },
+  emptyCartText: {
+    fontFamily: 'Poppins-Regular',
+  },
 };

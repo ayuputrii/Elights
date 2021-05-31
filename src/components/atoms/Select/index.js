@@ -3,20 +3,15 @@ import {Picker} from '@react-native-picker/picker';
 import {Text, View} from 'react-native';
 import style from './style';
 
-const Select = ({
-  labelSelect,
-  selectLabel,
-  selectValue,
-  selectLabel1,
-  selectValue1,
-}) => {
+const Select = ({data, title, selected, onValueChange}) => {
   return (
     <View>
-      <Text style={style.label}>{labelSelect}</Text>
+      <Text style={style.label}>{title}</Text>
       <View style={style.input}>
-        <Picker>
-          <Picker.Item label={selectLabel} value={selectValue} />
-          <Picker.Item label={selectLabel1} value={selectValue1} />
+        <Picker selectedValue={selected} onValueChange={onValueChange}>
+          {data.map((item, index) => (
+            <Picker.Item key={index} label={item.label} value={item.value} />
+          ))}
         </Picker>
       </View>
     </View>
