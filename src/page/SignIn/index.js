@@ -22,6 +22,7 @@ const SignIn = ({navigation}) => {
         />
         <Gap height={24} />
         <Button
+          textColor="white"
           labelButton="SignIn"
           onPress={() => navigation.replace('MainApp')}
         />

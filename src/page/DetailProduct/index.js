@@ -40,6 +40,7 @@ const DetailProduct = ({navigation}) => {
           </View>
           <View style={style.button}>
             <Button
+              textColor="white"
               labelButton="Order Now"
               onPress={() => navigation.navigate('MainApp')}
             />

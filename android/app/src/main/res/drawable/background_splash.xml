@@ -6,7 +6,7 @@
 
     <item
         android:drawable="@drawable/logo"
-        android:height="200dp"
+        android:height="300dp"
         android:width="200dp"
         android:gravity="center"
         />

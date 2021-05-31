@@ -61,7 +61,7 @@ export default {
     alignItems: 'center',
   },
   labelTotal: {
-    fontSize: 13,
+    fontSize: 17,
     color: '#8D92A3',
   },
   priceTotal: {

@@ -5,13 +5,14 @@ import style from './style';
 const Button = ({
   labelButton,
   onPress,
-  color = '#FFC93C',
+  color = '#009688',
   textColor = 'black',
+  fontSize = 14,
 }) => {
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
       <View style={style.container(color)}>
-        <Text style={style.text(textColor)}>{labelButton}</Text>
+        <Text style={style.text(textColor, fontSize)}>{labelButton}</Text>
       </View>
     </TouchableOpacity>
   );

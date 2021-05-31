@@ -18,8 +18,6 @@ const BottomNavigation = ({state, descriptors, navigation}) => {
   }
 
   const Icon = ({label, focus}) => {
-    console.log('LABEL', label);
-    console.log('FOCUS', focus);
     /* eslint-disable no-extra-boolean-cast */
     switch (label) {
       case 'Home':
@@ -77,7 +75,7 @@ const BottomNavigation = ({state, descriptors, navigation}) => {
             <Icon label={label} focus={isFocused} />
             <Text
               style={{
-                color: isFocused ? '#289672' : '#E2E2E2',
+                color: isFocused ? '#009688' : '#E2E2E2',
                 textAlign: 'center',
                 top: 4,
                 fontFamily: 'ComicNeue-Bold',

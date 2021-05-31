@@ -15,7 +15,7 @@ export default {
     paddingHorizontal: 40,
     paddingVertical: 12,
     elevation: 40,
-    shadowColor: '#289672',
+    shadowColor: '#009688',
     marginBottom: 2,
   },
   listContent: {
@@ -28,8 +28,8 @@ export default {
   },
   subTitle: {
     fontSize: 14,
-    fontFamily: 'Poppins-Light',
-    color: '#8D92A3',
+    fontFamily: 'ComicNeue-Bold',
+    color: '#5b6d5b',
   },
   value: {
     fontSize: 15,
@@ -39,8 +39,9 @@ export default {
   cartCheckout: {
     borderWidth: 0.7,
     paddingHorizontal: 18,
-    paddingVertical: 5,
-    borderColor: '#289672',
+    paddingVertical: 9,
+    borderColor: '#FFC93C',
+    backgroundColor: '#FFC93C',
     borderRadius: 4,
   },
 };

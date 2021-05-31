@@ -1,7 +1,7 @@
 export default {
   container: {
     flex: 1,
-    backgroundColor: '#289672',
+    backgroundColor: '#009688',
   },
   titleHeader: {
     fontFamily: 'ComicNeue-Bold',
@@ -15,7 +15,7 @@ export default {
     borderTopLeftRadius: 200,
     paddingVertical: 45,
     paddingHorizontal: 45,
-    backgroundColor: '#ffe227',
+    backgroundColor: '#FFC93C',
   },
   title: {
     color: '#5b6d5b',
