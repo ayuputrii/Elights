@@ -28,7 +28,7 @@ const ListProduct = () => {
     });
     return ref.current;
   };
-  console.log('CART_(((', cart, prevCart);
+
   const prevCart = usePrevious(cart);
 
   useEffect(() => {
@@ -42,11 +42,11 @@ const ListProduct = () => {
   const showAlert = () => {
     Alert.alert('Add Item Success', 'Item successfully added to cart!');
   };
+
   const addItem = useStore(state => {
     showAlert();
     return state.addItem;
   });
-  console.log('CART__', cart);
 
   const RenderItem = ({item}) => (
     <TouchableOpacity

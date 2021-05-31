@@ -1,5 +1,11 @@
 import React from 'react';
-import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
+import {
+  ImageBackground,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import style from './style';
 import {IcBackWhite} from '../../assets';
 import {Button, Counter, Rating} from '../../components';
@@ -26,9 +32,11 @@ const DetailProduct = ({navigation, route}) => {
             </View>
             <Counter />
           </View>
-          <Text style={style.desc}>{description}</Text>
-          <Text style={style.label}>Category</Text>
-          <Text style={style.desc}> => {category}</Text>
+          <ScrollView>
+            <Text style={style.desc}>{description}</Text>
+            <Text style={style.label}>Category</Text>
+            <Text style={style.desc}> => {category}</Text>
+          </ScrollView>
         </View>
         <View style={style.footer}>
           <View style={style.priceContainer}>
