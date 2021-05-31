@@ -20,10 +20,8 @@ const DetailProduct = ({navigation, route}) => {
       <View style={style.content}>
         <View style={style.mainContent}>
           <View style={style.productContainer}>
-            <View>
-              <Text style={style.title}>
-                {title.length > 35 ? title.slice(0, 35) + '...' : title}
-              </Text>
+            <View style={style.titleBlocker}>
+              <Text style={style.title}>{title}</Text>
               <Rating />
             </View>
             <Counter />

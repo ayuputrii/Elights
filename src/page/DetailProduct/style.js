@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {Dimensions} from 'react-native';
 
-const {height: HEIGHT} = Dimensions.get('window');
+const {height: HEIGHT, width: WIDTH} = Dimensions.get('window');
 
 export default {
   page: {
@@ -29,6 +29,11 @@ export default {
   },
   mainContent: {
     flex: 1,
+  },
+  titleBlocker: {
+    width: WIDTH / 2,
+    flexDirection: 'column',
+
   },
   productContainer: {
     flexDirection: 'row',
