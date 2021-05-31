@@ -10,14 +10,17 @@ import style from './style';
 import {useQuery} from 'react-query';
 import axios from 'axios';
 import {IcOrderOn} from '../../../assets';
+import {useNavigation} from '@react-navigation/native';
 
 const API_URL = 'https://fakestoreapi.com/products';
 
-const ListProduct = ({onPress}) => {
+const ListProduct = () => {
+  const navigation = useNavigation();
   const {isLoading, error, data} = useQuery('getData', () => axios(API_URL));
 
   const RenderItem = ({item}) => (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('DetailProduct', item)}>
       <View style={style.productCard}>
         <Image source={{uri: item.image}} style={style.image} />
         <View style={style.contentText}>
@@ -35,7 +38,6 @@ const ListProduct = ({onPress}) => {
       </View>
     </TouchableOpacity>
   );
-  console.log(data);
   if (isLoading) {
     return (
       <View style={style.loadingContainer}>
@@ -43,6 +45,7 @@ const ListProduct = ({onPress}) => {
       </View>
     );
   }
+  console.log(data);
   return (
     <View style={style.container}>
       {data.data.map((item, index) => (

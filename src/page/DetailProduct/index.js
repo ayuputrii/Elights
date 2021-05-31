@@ -1,15 +1,16 @@
 import React from 'react';
 import {ImageBackground, Text, TouchableOpacity, View} from 'react-native';
 import style from './style';
-import {FoodDummy1, IcBackWhite} from '../../assets';
+import {IcBackWhite} from '../../assets';
 import {Button, Counter, Rating} from '../../components';
 
-const DetailProduct = ({navigation}) => {
+const DetailProduct = ({navigation, route}) => {
   const canGoback = navigation.canGoBack();
+  const {title, image, description, category, price} = route.params;
 
   return (
     <View style={style.page}>
-      <ImageBackground source={FoodDummy1} style={style.backgroundCover}>
+      <ImageBackground source={{uri: image}} style={style.backgroundCover}>
         <TouchableOpacity
           style={style.back}
           onPress={canGoback ? () => navigation.goBack() : false}>
@@ -20,28 +21,27 @@ const DetailProduct = ({navigation}) => {
         <View style={style.mainContent}>
           <View style={style.productContainer}>
             <View>
-              <Text style={style.title}>Cherry Healthy</Text>
+              <Text style={style.title}>
+                {title.length > 35 ? title.slice(0, 35) + '...' : title}
+              </Text>
               <Rating />
             </View>
             <Counter />
           </View>
-          <Text style={style.desc}>
-            Makanan khas Bandung yang cukup sering dipesan oleh anak muda dengan
-            pola makan yang cukup tinggi dengan mengutamakan diet yang sehat dan
-            teratur.
-          </Text>
-          <Text style={style.label}>Ingradients</Text>
-          <Text style={style.desc}>Seledri, telur, blueberry,madu.</Text>
+          <Text style={style.desc}>{description}</Text>
+          <Text style={style.label}>Category</Text>
+          <Text style={style.desc}> => {category}</Text>
         </View>
         <View style={style.footer}>
           <View style={style.priceContainer}>
             <Text style={style.labelTotal}>Total Prices</Text>
-            <Text style={style.priceTotal}>IDR 12.200.000</Text>
+            <Text style={style.priceTotal}>{price}</Text>
           </View>
           <View style={style.button}>
             <Button
               textColor="white"
-              labelButton="Order Now"
+              labelButton="Checkout Now"
+              fontSize={10}
               onPress={() => navigation.navigate('MainApp')}
             />
           </View>

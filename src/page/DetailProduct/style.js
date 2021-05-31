@@ -43,7 +43,7 @@ export default {
     marginBottom: 16,
   },
   label: {
-    fontSize: 14,
+    fontSize: 18,
     fontFamily: 'ComicNeue-Bold',
     color: '#8D92A3',
     marginBottom: 4,
@@ -57,7 +57,7 @@ export default {
   },
   button: {
     width: 100,
-    paddingVertical: 16,
+    paddingVertical: 24,
     alignItems: 'center',
   },
   labelTotal: {

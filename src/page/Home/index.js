@@ -4,7 +4,7 @@ import {HeaderList, ListProduct} from '../../components';
 import {FoodDummy1} from '../../assets';
 import style from './style';
 
-const Home = ({navigation}) => {
+const Home = () => {
   return (
     <View style={style.container}>
       <HeaderList
@@ -14,7 +14,7 @@ const Home = ({navigation}) => {
       />
       <ScrollView>
         <TouchableOpacity>
-          <ListProduct onPress={() => navigation.navigate('DetailProduct')} />
+          <ListProduct />
         </TouchableOpacity>
       </ScrollView>
     </View>
