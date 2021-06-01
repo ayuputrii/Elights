@@ -3,7 +3,6 @@ import {View, Text, ScrollView} from 'react-native';
 import {Gap, Select, TextInput} from '../../atoms';
 import style from './style';
 import useStore from '../../../store';
-import {useForm} from 'react-hook-form';
 import pattern from '../../../helpers/email';
 
 const errorText = 'This field is required!';

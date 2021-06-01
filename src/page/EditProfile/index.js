@@ -20,7 +20,7 @@ const EditProfile = ({navigation}) => {
   });
   const userProfile = useStore(state => state.userProfile);
   const editProfile = useStore(state => state.editProfile);
-  console.log('fields', fields);
+
   const onSubmit = data => {
     editProfile(data);
     if (canGoback) {

@@ -12,25 +12,19 @@ const SignIn = ({navigation}) => {
         <Text style={style.title}>SignIn</Text>
         <Gap height={45} />
         <TextInput
-          labelTextInput="Email Address"
-          plaeceholderTextInput="Type your email address"
+          labelTextInput="Your Name"
+          plaeceholderTextInput="Type your name"
         />
         <Gap height={16} />
         <TextInput
-          labelTextInput="Password"
-          plaeceholderTextInput="Type your password"
+          labelTextInput="Email Address"
+          plaeceholderTextInput="Type your email address"
         />
-        <Gap height={24} />
+        <Gap height={40} />
         <Button
           textColor="white"
           labelButton="SignIn"
           onPress={() => navigation.replace('MainApp')}
-        />
-        <Gap height={12} />
-        <Button
-          labelButton="Create New Account"
-          color="#8D92A3"
-          textColor="white"
         />
       </View>
     </View>

@@ -7,7 +7,6 @@ import useStore from '../../../store';
 
 const ContentProfile = () => {
   const userProfile = useStore(state => state.userProfile);
-  console.log('Profile', userProfile);
   return (
     <View style={style.profile}>
       <Image source={FoodDummy1} style={style.image} />
