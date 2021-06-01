@@ -2,8 +2,23 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {Button, Gap, TextInput} from '../../components';
 import style from './style';
+import {useForm, Controller} from 'react-hook-form';
+import useStore from '../../store';
 
 const SignIn = ({navigation}) => {
+  const {
+    handleSubmit,
+    control,
+    formState: {errors},
+  } = useForm();
+  const userProfile = useStore(state => state.userProfile);
+  const clearCart = useStore(state => state.clearCart);
+
+  const onSubmit = data => {
+    clearCart(data);
+    navigation.replace('MainApp');
+  };
+
   return (
     <View style={style.container}>
       <Text style={style.titleHeader}>Elights</Text>
@@ -11,20 +26,27 @@ const SignIn = ({navigation}) => {
       <View style={style.viewContent}>
         <Text style={style.title}>SignIn</Text>
         <Gap height={45} />
-        <TextInput
-          labelTextInput="Your Name"
-          plaeceholderTextInput="Type your name"
+        <Controller
+          control={control}
+          render={({field: {onChange, value}}) => (
+            <TextInput
+              labelTextInput="Email Address"
+              plaeceholderTextInput="Type your email address"
+              value={value}
+              onChangeText={text => onChange(text)}
+              defaultValue={userProfile.email}
+            />
+          )}
+          name="email"
+          rules={{required: true}}
+          defaultValue={userProfile.email}
         />
-        <Gap height={16} />
-        <TextInput
-          labelTextInput="Email Address"
-          plaeceholderTextInput="Type your email address"
-        />
+        {errors?.email && <Text style={style.errorText}>{errorText}</Text>}
         <Gap height={40} />
         <Button
           textColor="white"
           labelButton="SignIn"
-          onPress={() => navigation.replace('MainApp')}
+          onPress={handleSubmit(onSubmit)}
         />
       </View>
     </View>
