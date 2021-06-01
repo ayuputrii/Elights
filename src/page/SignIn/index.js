@@ -30,6 +30,23 @@ const SignIn = ({navigation}) => {
           control={control}
           render={({field: {onChange, value}}) => (
             <TextInput
+              labelTextInput="Name"
+              plaeceholderTextInput="Type your name"
+              value={value}
+              onChangeText={text => onChange(text)}
+              defaultValue={userProfile.name}
+            />
+          )}
+          name="name"
+          rules={{required: true}}
+          defaultValue={userProfile.name}
+        />
+        {errors?.name && <Text style={style.errorText}>{errorText}</Text>}
+        <Gap height={16} />
+        <Controller
+          control={control}
+          render={({field: {onChange, value}}) => (
+            <TextInput
               labelTextInput="Email Address"
               plaeceholderTextInput="Type your email address"
               value={value}
